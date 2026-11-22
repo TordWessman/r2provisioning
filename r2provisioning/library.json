@@ -1,0 +1,34 @@
+{
+  "name": "r2provisioning",
+  "version": "0.0.1",
+  "description": "Device provisioning library for ESP32 and ESP8266",
+  "keywords": [
+    "provisioning",
+    "esp32",
+    "esp8266",
+    "iot"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TordWessman/r2provisioning.git"
+  },
+  "authors": [
+    {
+      "name": "Olga"
+    }
+  ],
+  "license": "MIT",
+  "frameworks": ["arduino"],
+  "platforms": ["espressif32", "espressif8266"],
+  "build": {
+    "srcFilter": ["+<r2provisioning/>"],
+    "flags": ["-Isrc"]
+  },
+  "export": {
+    "exclude": [
+      "test/",
+      ".vscode/",
+      ".pio/"
+    ]
+  }
+}
