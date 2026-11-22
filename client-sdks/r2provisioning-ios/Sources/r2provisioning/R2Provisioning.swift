@@ -2,8 +2,7 @@
 //  R2Provisioning.swift
 //  r2provisioning
 //
-//  Client-side entry point for provisioning r2 devices.
-//  Scaffold: the public API is a placeholder and will change.
+//  Client SDK for provisioning r2 devices. See `R2ProvisioningClient`.
 //
 
 public enum R2Provisioning {
