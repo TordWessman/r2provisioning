@@ -30,3 +30,6 @@ do {
 ```sh
 swift build && swift test
 ```
+
+## Example app
+`Example/` contains a SwiftUI iOS app that uses this package as a local dependency. Open `Example/R2ProvisioningExample.xcodeproj`, or regenerate it from `Example/project.yml` with `cd Example && xcodegen generate`.

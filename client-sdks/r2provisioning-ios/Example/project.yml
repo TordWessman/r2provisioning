@@ -1,0 +1,30 @@
+name: R2ProvisioningExample
+options:
+  bundleIdPrefix: se.axelit.r2provisioning
+  deploymentTarget:
+    iOS: "17.0"
+packages:
+  r2provisioning:
+    path: ..
+targets:
+  R2ProvisioningExample:
+    type: application
+    platform: iOS
+    sources: [R2ProvisioningExample]
+    dependencies:
+      - package: r2provisioning
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: se.axelit.r2provisioning.example
+        SWIFT_VERSION: "6.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_STYLE: Automatic
+    info:
+      path: R2ProvisioningExample/Info.plist
+      properties:
+        CFBundleDisplayName: r2 Provisioning
+        UILaunchScreen: {}
+        NSLocalNetworkUsageDescription: Talks to the r2 device over its WiFi hotspot to send network credentials.
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
