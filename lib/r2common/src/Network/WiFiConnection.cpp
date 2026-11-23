@@ -43,6 +43,7 @@ namespace r2common
     {
         WiFi.begin(ssid, password);
         status = WiFiConnectionStatus::Connecting;
+        lastReconnectAttemptMs = millis();
     }
 
     bool WiFiConnection::Connect(uint32_t timeoutMs)
@@ -91,8 +92,15 @@ namespace r2common
             event = WiFiConnectionEvent::Disconnected;
         }
 
+        // WL_DISCONNECTED means the SDK is still associating (or reconnecting on its
+        // own). Re-issuing WiFi.begin() then restarts the join, and a join can take
+        // longer than the reconnect interval, so it would never complete. Only retry
+        // once the SDK has given up, or the join has stalled for kJoinStallMs.
+        const uint32_t sinceAttempt = millis() - lastReconnectAttemptMs;
+        const bool joining = WiFi.status() == WL_DISCONNECTED;
         if (autoReconnect &&
-            (lastReconnectAttemptMs == 0 || millis() - lastReconnectAttemptMs >= reconnectIntervalMs))
+            (lastReconnectAttemptMs == 0 ||
+             (sinceAttempt >= reconnectIntervalMs && (!joining || sinceAttempt >= kJoinStallMs))))
         {
             lastReconnectAttemptMs = millis();
             Begin(); // Re-issue WiFi.begin(ssid, password); sets status to Connecting.

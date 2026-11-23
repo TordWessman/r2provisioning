@@ -75,6 +75,10 @@ namespace r2common
         /// @brief Default delay between reconnection attempts while the link is down.
         static const uint32_t kDefaultReconnectIntervalMs = 5000;
 
+        /// @brief How long `Loop()` lets an in-progress join (`WL_DISCONNECTED`) run
+        ///        before re-issuing `WiFi.begin()` anyway.
+        static const uint32_t kJoinStallMs = 30000;
+
         /// @brief Create a connection descriptor. Does not touch the radio until
         ///        `Begin()` or `Connect()` is called.
         /// @param ssid WiFi network name.
