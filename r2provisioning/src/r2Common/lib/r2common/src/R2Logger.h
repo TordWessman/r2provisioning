@@ -35,11 +35,11 @@ namespace r2common
 
     public:
         virtual ~R2LoggerDelegate() { }
-        virtual void log(const int logType, const char *m1) { }
-        virtual void log(const int logType, const char *m1, const char *m2) { }
-        virtual void log(const int logType, const char *m1, char *m2) { }
-        virtual void log(const int logType, const char *m1, const int m2) { }
-        virtual void log(const int logType, const char *m1, const uint32_t m2) { }
+        virtual void log(const int /*logType*/, const char * /*m1*/) { }
+        virtual void log(const int /*logType*/, const char * /*m1*/, const char * /*m2*/) { }
+        virtual void log(const int /*logType*/, const char * /*m1*/, char * /*m2*/) { }
+        virtual void log(const int /*logType*/, const char * /*m1*/, const int /*m2*/) { }
+        virtual void log(const int /*logType*/, const char * /*m1*/, const uint32_t /*m2*/) { }
     };
 
     /// @brief Logger. Allows the framework to print out debug information. Disable tracking by defining `R2_LOGGING_DISABLED`.
