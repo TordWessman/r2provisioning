@@ -1,2 +1,5 @@
 .claude
 /build/
+.build/
+.swiftpm/
+Package.resolved
