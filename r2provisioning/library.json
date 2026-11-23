@@ -1,6 +1,6 @@
 {
   "name": "r2provisioning",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Device provisioning library for ESP32 and ESP8266",
   "keywords": [
     "provisioning",

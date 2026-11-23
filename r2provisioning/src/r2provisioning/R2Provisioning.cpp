@@ -31,7 +31,7 @@ const char *joinStateName(JoinState state) {
 
 } // namespace
 
-const char *version() { return "0.0.1"; }
+const char *version() { return "0.0.2"; }
 
 R2Provisioning::R2Provisioning(const R2ProvisioningConfig &config) : config_(config) {}
 

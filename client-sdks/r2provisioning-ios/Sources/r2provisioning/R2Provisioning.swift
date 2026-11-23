@@ -7,5 +7,5 @@
 
 public enum R2Provisioning {
     /// SDK version; kept in step with the firmware library.
-    public static let version = "0.0.1"
+    public static let version = "0.0.2"
 }
